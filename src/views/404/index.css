@@ -1,0 +1,256 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  perspective: 9999px;
+  font-size: 16px;
+  color: #fff;
+  z-index: 9999;
+
+  --box-size: 80px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 5em;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.container div {
+  box-sizing: border-box;
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.trail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+
+  width: var(--box-size);
+  height: var(--box-size);
+
+  transform: rotateX(-30deg) rotateY(-30deg);
+}
+
+@keyframes trailMove {
+  0% {
+    transform: rotateX(-270deg) translateZ(-40px) translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    /* 20个轨道元素 */
+    transform: rotateX(-270deg) translateZ(-40px)
+      translateX(calc(-20 * var(--box-size)));
+    opacity: 0;
+  }
+}
+
+.trail > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: rotateX(-270deg) translateZ(calc(- var(--box-size) / 2));
+  border: 1px solid #ccc;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: trailMove 40s linear infinite;
+}
+
+.trail > div:nth-child(2) {
+  animation: trailMove 40s 2s linear infinite;
+}
+.trail > div:nth-child(3) {
+  animation: trailMove 40s 4s linear infinite;
+}
+.trail > div:nth-child(4) {
+  animation: trailMove 40s 6s linear infinite;
+}
+.trail > div:nth-child(5) {
+  animation: trailMove 40s 8s linear infinite;
+}
+.trail > div:nth-child(6) {
+  animation: trailMove 40s 10s linear infinite;
+}
+.trail > div:nth-child(7) {
+  animation: trailMove 40s 12s linear infinite;
+}
+.trail > div:nth-child(8) {
+  animation: trailMove 40s 14s linear infinite;
+}
+.trail > div:nth-child(9) {
+  animation: trailMove 40s 16s linear infinite;
+}
+.trail > div:nth-child(10) {
+  animation: trailMove 40s 18s linear infinite;
+}
+.trail > div:nth-child(11) {
+  animation: trailMove 40s 20s linear infinite;
+}
+.trail > div:nth-child(12) {
+  animation: trailMove 40s 22s linear infinite;
+}
+.trail > div:nth-child(13) {
+  animation: trailMove 40s 24s linear infinite;
+}
+.trail > div:nth-child(14) {
+  animation: trailMove 40s 26s linear infinite;
+}
+.trail > div:nth-child(15) {
+  animation: trailMove 40s 28s linear infinite;
+}
+.trail > div:nth-child(16) {
+  animation: trailMove 40s 30s linear infinite;
+}
+.trail > div:nth-child(17) {
+  animation: trailMove 40s 32s linear infinite;
+}
+.trail > div:nth-child(18) {
+  animation: trailMove 40s 34s linear infinite;
+}
+.trail > div:nth-child(19) {
+  animation: trailMove 40s 36s linear infinite;
+}
+.trail > div:nth-child(20) {
+  animation: trailMove 40s 38s linear infinite;
+}
+.trail > div > span {
+  transform: rotateZ(-90deg);
+}
+
+@keyframes scrollCube {
+  0% {
+    transform: rotate(0);
+  }
+
+  85% {
+    transform: rotateZ(91deg);
+  }
+
+  90% {
+    transform: rotateZ(90deg);
+  }
+
+  100% {
+    transform: rotateZ(90deg);
+  }
+}
+
+@keyframes back {
+  0% {
+    transform: rotateX(-30deg) rotateY(-30deg) translateX(0);
+  }
+  100% {
+    transform: rotateX(-30deg) rotateY(-30deg)
+      translateX(calc(-1 * var(--box-size)));
+  }
+}
+
+.cube {
+  width: 80px;
+  height: 80px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(-30deg) translateX(0);
+  will-change: transform;
+  animation: back 2s linear infinite forwards;
+}
+
+.cube-box {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: right bottom;
+  transform: rotateZ(0);
+  will-change: transform;
+  animation: scrollCube 2s cubic-bezier(0.64, 0.02, 1, 0.6) forwards infinite;
+}
+
+.cube-box > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.322);
+
+  transform-style: preserve-3d;
+}
+
+.cube-box > div:nth-child(1) {
+  transform: translateY(calc(-1 * var(--box-size) / 2)) rotateZ(90deg)
+    rotateY(90deg);
+}
+.cube-box > div:nth-child(2) {
+  transform: translateY(calc(var(--box-size) / 2)) rotateZ(-90deg)
+    rotateY(90deg);
+}
+.cube-box > div:nth-child(3) {
+  transform: translateX(calc(-1 * var(--box-size) / 2)) rotateY(90deg);
+}
+.cube-box > div:nth-child(4) {
+  transform: translateX(calc(var(--box-size) / 2)) rotateX(180deg)
+    rotateY(-90deg);
+}
+
+.cube-box > div:nth-child(5) {
+  transform: translateZ(calc(var(--box-size) / 2));
+}
+
+.cube-box > div:nth-child(6) {
+  transform: translateZ(calc(-1 * var(--box-size) / 2));
+}
+
+@keyframes contentToggle {
+  0% {
+    content: "0";
+  }
+  100% {
+    content: "4";
+  }
+}
+
+.cube-box > div::after {
+  content: "";
+}
+
+.cube-box > div:nth-child(1)::after {
+  /* 上面 */
+  animation: contentToggle 4s -2s linear infinite;
+}
+.cube-box > div:nth-child(2)::after {
+  /* 下面 */
+  animation: contentToggle 4s -2s linear infinite;
+}
+
+.cube-box > div:nth-child(3)::after {
+  /* 后面 */
+  animation: contentToggle 4s linear infinite;
+}
+.cube-box > div:nth-child(4)::after {
+  /* 前面 */
+  animation: contentToggle 4s linear infinite;
+}

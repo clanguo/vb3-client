@@ -1,0 +1,68 @@
+.md-content pre code.hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 1em;
+}
+.md-content pre.hljs {
+  overflow-x: auto;
+  padding: 1em;
+  /* box-shadow: inset 0 0 10px #ccc; */
+  color: var(--hltools-color);
+  background-color: var(--hl-bg);
+}
+code.hljs {
+	padding: 3px 5px;
+}
+pre.hljs code {
+  background: unset;
+}
+.hljs {
+  line-height: 1.2rem;
+	color: var(--hl-color);
+}
+.hljs-addition,
+.hljs-attribute,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-string,
+.hljs-symbol,
+.hljs-template-tag,
+.hljs-template-variable {
+	color: #91b859;
+}
+.hljs-keyword,
+.hljs-name,
+.hljs-section,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-selector-tag,
+.hljs-type,
+.hljs-variable {
+	color: #e53935;
+}
+.hljs-comment,
+.hljs-deletion,
+.hljs-doctag,
+.hljs-quote {
+	color: #888;
+}
+.hljs-link,
+.hljs-literal,
+.hljs-number,
+.hljs-regexp {
+	color: #49b1f5;
+}
+.hljs-meta {
+	color: #7c4dff;
+}
+.hljs-keyword,
+.hljs-name,
+.hljs-section,
+.hljs-selector-tag,
+.hljs-strong,
+.hljs-title {
+	font-weight: 700;
+}
+.hljs-emphasis {
+	font-style: italic;
+}
