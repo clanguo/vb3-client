@@ -4,7 +4,7 @@
       <div class="sider-nav-container" v-if="show" @click.self="onPrevent">
         <div class="sider-nav-content">
           <div class="avater">
-            <img src="/assets/avater.jpg" alt="" />
+            <img src="http://static.clanguo.top/assets/avater.jpg" alt="" />
           </div>
           <div class="site-data">
             <div class="site-data-item">

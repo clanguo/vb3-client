@@ -2,7 +2,7 @@
   <div
     class="blog-header"
     :style="{
-      background: 'url(/assets/index.jpg)',
+      background: 'url(http://static.clanguo.top/assets/default.png)',
     }"
   >
     <Nav></Nav>
@@ -31,7 +31,6 @@
 </template>
 
 <script>
-// import Nav from "../../../components/Nav";
 import Nav from "../../../components/Nav";
 export default {
   components: {

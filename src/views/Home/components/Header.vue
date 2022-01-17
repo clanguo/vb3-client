@@ -34,7 +34,7 @@ export default {
   position: relative;
   height: 100vh;
   background-attachment: fixed;
-  background-image: url("/assets/index.jpg");
+  background-image: url("http://static.clanguo.top/assets/index.jpg");
   background-size: cover;
   background-position: center center;
   text-shadow: 0.1rem 0.1rem 0.2rem rgb(0 0 0 / 15%);

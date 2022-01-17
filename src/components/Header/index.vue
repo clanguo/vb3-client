@@ -21,7 +21,7 @@ export default {
   props: {
     img: {
       type: String,
-      default: "/assets/index.jpg",
+      default: "http://static.clanguo.top/assets/index.jpg",
     },
   },
 };

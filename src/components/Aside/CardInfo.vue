@@ -2,7 +2,7 @@
   <div class="card-info">
     <div class="avater">
       <div class="avater-img">
-        <img src="/assets/avater.jpg" alt="" />
+        <img src="http://static.clanguo.top/assets/avater.jpg" alt="" />
       </div>
       <div class="avater-info">
         <div class="avater-info-name">零生</div>

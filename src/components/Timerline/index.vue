@@ -20,7 +20,7 @@
               :to="`/blog/${item.id}`"
               class="blog-item-cover"
             >
-              <img :src="item.poster || '/assets/default.png'" alt="" />
+              <img :src="item.poster || 'http://static.clanguo.top/assets/default.png'" alt="" />
             </router-link>
             <div class="blog-item-meta">
               <span class="blog-item-date">

@@ -8,7 +8,7 @@ export default {
   props: {
     loadingImg: {
       type: String,
-      default: "/assets/default.png",
+      default: "http://static.clanguo.top/assets/default.png",
     },
     src: {
       type: String,
