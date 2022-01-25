@@ -7,7 +7,8 @@
       <div class="avater-info">
         <div class="avater-info-name">零生</div>
         <div class="avater-info-desc">
-          A Simple and Card UI Design theme for Hexo
+          存在即合理
+          <blockquote style="font-size: 1em; color: var(--blockquote-color); text-align: right; line-height: .8em">--黑格尔</blockquote>
         </div>
       </div>
     </div>

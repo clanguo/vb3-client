@@ -44,3 +44,7 @@ export const getTag = (id = "") => {
 export const getCategory = (id = "") => {
   return requestGet(`/api/category/${id}`);
 };
+
+export const getComments = (page = 1, limit = 10, id = "") => {
+  return requestGet(`/api/comment/${id}?page=${page}&limit=${limit}`);
+}

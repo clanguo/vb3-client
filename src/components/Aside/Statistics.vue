@@ -15,12 +15,12 @@
           siteInfo.startTime | formatTime(true)
         }}</span>
       </li>
-      <li>
+      <!-- <li>
         <span class="statistics-name">本站总字数</span>
         <span class="statistics-count">{{
           Math.floor(siteInfo.countWords / 1000) + " k"
         }}</span>
-      </li>
+      </li> -->
       <li>
         <span class="statistics-name">最后更新时间</span>
         <span class="statistics-count">{{
