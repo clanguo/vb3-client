@@ -9,7 +9,7 @@
 					<BlogContent :content="blog.content"></BlogContent>
 					<Notice></Notice>
 					<TagShare :tags="(blog && blog.tags) || []"></TagShare>
-					<Comment :id="id"></Comment>
+					<Comment v-if="blog.id" :id="blog.id"></Comment>
 				</template>
 				<template #aside>
 					<Aside></Aside>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { getBlogById, getComments } from '../../api';
+import { getBlogById } from '../../api';
 import Header from './components/Header';
 import BlogContent from './components/BlogContent';
 import Aside from '../../components/Aside';
@@ -54,6 +54,7 @@ export default {
 
 		getBlogById(id).then(r => {
 			this.blog = r.data;
+			console.log(r.data);
 
 			if (r.err) {
 				this.blog = {

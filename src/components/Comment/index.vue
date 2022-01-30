@@ -1,6 +1,6 @@
 <template>
 	<div class="comment-container">
-		<div class="comment-count">留言 {{ count }}</div>
+		<div class="comment-count">留言 {{ count >= 0 ? count : '' }}</div>
 		<!-- 留言跳转 -->
 		<div class="comment-code">
 			<button>参与留言</button>
@@ -25,7 +25,7 @@
 			>
 				<div
 					@click="getMore"
-					v-if="count === -1 || count >= page * limit"
+					v-if="count >= page * limit"
 				>
 					点击加载更多...
 				</div>
@@ -38,7 +38,7 @@
 <script>
 import CommentItem from './CommentItem';
 import HrBorder from '../HrBorder';
-import { throttle } from '../../utils';
+import { getComments } from "../../api";
 
 export default {
 	components: {
@@ -60,22 +60,24 @@ export default {
 			isLoading: false,
 		};
 	},
-	created() {},
+	created() {
+		this.getMore();
+	},
 	methods: {
 		getMore() {
 			if (this.isLoading) return;
 			this.isLoading = true;
-			if (this.count !== -1 || this.count >= this.page * this.limit) {
+			if (this.count === -1 || this.count >= this.page * this.limit) {
 				getComments(this.page, this.limit, this.id)
 					.then(
-						r => {
+						res => {
 							if (res.err) {
 								console.error(res.err);
 								return;
 							} else {
-								this.comments = res.data.data;
+								this.comments = res.data;
 								this.page++;
-								this.count = res.data.count;
+								this.count = res.count;
 							}
 						},
 						e => {
