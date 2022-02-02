@@ -1,11 +1,5 @@
 import Home from "../views/Home";
-import Blog from "../views/Blog";
-import Archive from "../views/Archives";
 import NotFound from "../views/404";
-import Tag from "../views/Tag";
-import BlogByTag from "../views/Tag/BlogByTag";
-import Category from "../views/Category";
-import BlogByCategory from "../views/Category/BlogByCategory";
 
 export default [
   {
@@ -15,31 +9,31 @@ export default [
   {
     name: "Blog",
     path: "/blog/:id",
-    component: Blog,
+    component: () => import(/* webpackChunkName: "blog" */"../views/Blog"),
   },
   {
     path: "/archive",
-    component: Archive,
+    component: () => import(/* webpackChunkName: "archive" */"../views/Archives"),
   },
   {
     name: "Tag",
     path: "/tag",
-    component: Tag,
+    component: () => import(/* webpackChunkName: "tag */"../views/Tag"),
   },
   {
     name: "BlogByTag",
     path: "/tag/:id",
-    component: BlogByTag,
+    component: () => import(/* webpackChunkName: "tag" */"../views/Tag/BlogByTag"),
   },
   {
     name: "Categoty",
     path: "/category",
-    component: Category,
+    component: () => import(/* webpackChunkName: "category" */"../views/Category"),
   },
   {
     name: "BlogByCategory",
     path: "/category/:id",
-    component: BlogByCategory,
+    component: () => import(/* webpackChunkName: "category" */"../views/Category/BlogByCategory"),
   },
   {
     path: "*",
