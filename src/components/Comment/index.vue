@@ -4,7 +4,7 @@
 		<!-- 留言跳转 -->
 		<div class="comment-code">
 			<button>参与留言</button>
-			<img src="/assets/avater.jpg" alt="" />
+			<img :src="qr" alt="" />
 		</div>
 		<HrBorder></HrBorder>
 		<div class="comment-area">
@@ -23,10 +23,7 @@
 					padding-top: 20px;
 				"
 			>
-				<div
-					@click="getMore"
-					v-if="count >= page * limit"
-				>
+				<div @click="getMore" v-if="count >= page * limit">
 					点击加载更多...
 				</div>
 				<div v-else>-----------------我是有底线的-----------------</div>
@@ -38,7 +35,7 @@
 <script>
 import CommentItem from './CommentItem';
 import HrBorder from '../HrBorder';
-import { getComments } from "../../api";
+import { getComments } from '../../api';
 
 export default {
 	components: {
@@ -49,6 +46,10 @@ export default {
 		id: {
 			type: String,
 			required: true,
+		},
+		qr: {
+			type: String,
+			default: ""
 		},
 	},
 	data() {

@@ -9,7 +9,7 @@
 					<BlogContent :content="blog.content"></BlogContent>
 					<Notice></Notice>
 					<TagShare :tags="(blog && blog.tags) || []"></TagShare>
-					<Comment v-if="blog.id" :id="blog.id"></Comment>
+					<Comment v-if="blog.id" :id="blog.id" :qr="blog.qrCode" ></Comment>
 				</template>
 				<template #aside>
 					<Aside></Aside>
