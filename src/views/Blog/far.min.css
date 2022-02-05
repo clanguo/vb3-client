@@ -1,19 +1,19 @@
-.md-content pre code.hljs {
+.md-content pre code {
 	display: block;
 	overflow-x: auto;
 	padding: 1em;
 }
-.md-content pre.hljs {
+.md-content pre {
   overflow-x: auto;
-  padding: 1em;
+  padding: 1em 0;
   /* box-shadow: inset 0 0 10px #ccc; */
   color: var(--hltools-color);
   background-color: var(--hl-bg);
 }
-code.hljs {
+code {
 	padding: 3px 5px;
 }
-pre.hljs code {
+pre code {
   background: unset;
 }
 .hljs {

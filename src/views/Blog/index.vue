@@ -9,7 +9,11 @@
 					<BlogContent :content="blog.content"></BlogContent>
 					<Notice></Notice>
 					<TagShare :tags="(blog && blog.tags) || []"></TagShare>
-					<Comment v-if="blog.id" :id="blog.id" :qr="blog.qrCode" ></Comment>
+					<Comment
+						v-if="blog.id"
+						:id="blog.id"
+						:qr="blog.qrCode"
+					></Comment>
 				</template>
 				<template #aside>
 					<Aside></Aside>
@@ -47,6 +51,16 @@ export default {
 		};
 	},
 	created() {
+		const script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.onload = () => {
+			// console.log(1);
+			window.hljs?.highlightAll();
+		};
+		script.src =
+			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js';
+		document.body.appendChild(script);
+
 		let id = this.$route.params.id;
 		if (!id) {
 			console.warn('id is' + id);
@@ -65,8 +79,6 @@ export default {
 				this.blog.content = this.blog.content.content;
 			}
 		});
-
-		
 	},
 };
 </script>
