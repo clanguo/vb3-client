@@ -34,6 +34,8 @@ import Layout from '../../components/Layout';
 import TwoColumnLayout from '../../components/TwoColumnLayout';
 import Comment from '../../components/Comment';
 
+let hjlsPromise;
+
 export default {
 	components: {
 		Header,
@@ -51,15 +53,17 @@ export default {
 		};
 	},
 	created() {
-		const script = document.createElement('script');
-		script.type = 'text/javascript';
-		script.onload = () => {
-			// console.log(1);
-			window.hljs?.highlightAll();
-		};
-		script.src =
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js';
-		document.body.appendChild(script);
+		hjlsPromise = new Promise(resolve => {
+			const script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.onload = () => {
+				console.log('highlight');
+				resolve();
+			};
+			script.src =
+				'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js';
+			document.body.appendChild(script);
+		});
 
 		let id = this.$route.params.id;
 		if (!id) {
@@ -80,6 +84,12 @@ export default {
 			}
 		});
 	},
+	mounted() {
+		hjlsPromise.then(() => {
+			console("highlightAll");
+			window?.hjls.highlightAll();
+		});
+	}
 };
 </script>
 
