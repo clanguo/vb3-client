@@ -2,7 +2,7 @@
 	<div class="comment-item-container">
 		<div class="comment-item">
 			<div class="comment-avater">
-				<img src="/assets/avater.jpg" alt="" />
+				<img :src="data.avater" alt="" />
 			</div>
 			<div class="comment-main">
 				<div class="comment-username">{{ data.userName }} {{ data.replyUserId ? '> ' + data.replyUserName : "" }}</div>
