@@ -4,7 +4,7 @@
 		<!-- 留言跳转 -->
 		<div class="comment-code">
 			<button>参与留言</button>
-			<img :src="qr" alt="" />
+			<img :src="qr || 'http://static.clanguo.top/qr/qr_index.jpeg'" alt="" />
 		</div>
 		<HrBorder></HrBorder>
 		<div class="comment-area">
