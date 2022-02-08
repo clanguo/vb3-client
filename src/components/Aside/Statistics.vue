@@ -10,7 +10,7 @@
         <span class="statistics-count">{{ siteInfo.blog || "-" }}</span>
       </li>
       <li>
-        <span class="statistics-name">已经运行时间</span>
+        <span class="statistics-name">距离上次服务器启动</span>
         <span class="statistics-count">{{
           siteInfo.startTime | formatTime(true)
         }}</span>
