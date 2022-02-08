@@ -80,3 +80,7 @@
   color: #f47466;
   text-decoration: underline;
 }
+
+.md-content img {
+  width: 100%;
+}
