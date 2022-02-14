@@ -44,20 +44,21 @@ export default {
 			return md.render((this.content && this.content) || '');
 		},
 	},
-	watch: {
-		renderContent: {
-			handler() {
-				this.$nextTick(() => {
-					if (!hjlsPromise) return;
-					hjlsPromise.then(() => {
-						console.log('highlightAll', window.hljs);
-						window?.hljs?.highlightAll();
-					});
-				});
-			},
-			immediate: true,
-		},
-	},
+	// watch: {
+	// 	renderContent: {
+	// 		handler() {
+	// 			this.$nextTick(() => {
+	// 				if (!hjlsPromise) return;
+	// 				hjlsPromise.then(() => {
+	// 					console.log('highlightAll', window.hljs);
+	// 					debugger;
+	// 					window?.hljs?.highlightAll();
+	// 				});
+	// 			});
+	// 		},
+	// 		immediate: true,
+	// 	},
+	// },
 	created() {
 		hjlsPromise = new Promise(resolve => {
 			const script = document.createElement('script');
@@ -69,6 +70,15 @@ export default {
 			script.src =
 				'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js';
 			document.body.appendChild(script);
+		});
+	},
+	updated() {
+		this.$nextTick(() => {
+			if (!hjlsPromise) return;
+			hjlsPromise.then(() => {
+				window?.hljs?.highlightAll();
+				console.log("highlightAll");
+			});
 		});
 	},
 };
