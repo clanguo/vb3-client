@@ -68,7 +68,7 @@ export default {
 				resolve();
 			};
 			script.src =
-				'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js';
+				'//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js';
 			document.body.appendChild(script);
 		});
 	},
